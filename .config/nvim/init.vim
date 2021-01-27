@@ -1,15 +1,13 @@
 set encoding=UTF-8
 set number
-set spelllang=en_US, se_SE
+set spelllang=en_us
 set spell
 let mapleader = "," " map leader to , (comma)
 
-" Install vim-plug if not found
-if empty(glob('$HOME/.local/share/nvim/site/autoload/'))
-  silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-      endif
-         
+" Install vim-plug first with:
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 call plug#begin(stdpath('data') . '/plugged')
 
 		Plug 'http://www.github.com/junegunn/vim-github-dashboard.git'
@@ -17,7 +15,7 @@ call plug#begin(stdpath('data') . '/plugged')
 		Plug 'junegunn/fzf.vim'
 		Plug 'junegunn/seoul256.vim'
 		Plug 'preservim/nerdtree'
-		Plug 'tiagofumo/vim-nerdtree-syntax-highlight.git'
+		Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
 		Plug 'ryanoasis/vim-devicons'
 		Plug 'https://github.com/tpope/vim-commentary'
 		Plug 'liuchengxu/vista.vim'
@@ -35,6 +33,7 @@ call plug#begin(stdpath('data') . '/plugged')
 		Plug 'arcticicestudio/nord-vim', { 'branch': 'develop'  }
 		Plug 'vim-syntastic/syntastic'
 		Plug 'morhetz/gruvbox'
+		Plug 'sainnhe/gruvbox-material'
 
 " Initialize plugin system
 call plug#end()
@@ -216,15 +215,18 @@ set showcmd
 
 
 syntax on
+
 " Color Themes
 " set termguicolors " Enables nvim more than 256 colors
 
 " let g:onedark_italic=1
 " colorscheme onedark
- let g:nord_italic=1
- colorscheme nord
-" let g:gruvbox_italic=1 " Lookgs good with Fantasque Sans Mono or Fira Mono font.
-" colorscheme gruvbox
+" let g:nord_italic=1
+" colorscheme nord
+let g:gruvbox_italic=1 " Lookgs good with Fantasque Sans Mono or Fira Mono font.
+let g:gruvbox_transparent_bg=1
+colorscheme gruvbox
+" colorscheme gruvbo-material
 
 " Sett filetypes.
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
@@ -239,7 +241,8 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " Airline stuff
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='nord_minimal'
+"let g:airline_theme='nord_minimal'
+let g:airline_theme='gruvbox'
 
 " Syntax stuff
 	let g:asmsyntax = 'nasm'

@@ -2,7 +2,7 @@
 window:
   dimensions:
     columns: 140
-    lines: 38
+    lines: 45
   padding:
     x: 25
     y: 25
@@ -15,6 +15,7 @@ window.dynamic_title: true
 
 # Font Customization
 font:
+  size: 10
   normal:
     family: Fira Code
     style: Regular
@@ -24,7 +25,6 @@ font:
   italic:
     family: Fira Code
     style: Italic
-  size: 10
   offset:
     x: 0
     y: 0
@@ -36,7 +36,7 @@ font:
     persistent_logging: false
 draw_bold_text_with_bright_colors: true
 
-# Colros (Base 16 Default Dark)
+# Colors (Nord normal, Base 16 Default Dark bright)
 colors:
   # Default colors
   primary:
