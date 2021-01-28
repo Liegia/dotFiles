@@ -4,6 +4,26 @@ set spelllang=en_us
 " set spell
 let mapleader = "," " map leader to , (comma)
 
+" True Color Support if it's avaiable in terminal
+if has("termguicolors")
+    set termguicolors
+endif
+
+syntax on
+syntax enable
+
+
+" *---- Search configuration ----*
+set ignorecase                    " ignore case when searching
+set smartcase                     " turn on smartcase
+
+
+" *---- Tab and Indent configuration ----*
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+
 " Install vim-plug first with:
 " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 "       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -225,7 +245,6 @@ endif
 set showcmd
 
 
-syntax on
 
 " *---- Color Themes ----*
 " set termguicolors " Enables nvim more than 256 colors
@@ -242,7 +261,7 @@ colorscheme gruvbox
 " Sett filetypes.
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 au BufNewFile,BufFilePre,BufRead *.py set filetype=Python
-au BufNewFile,BufFilePre,BufRead *.PY set filetype=Python
+au BufNewFile,BufFilePre,BufRead *.pY set filetype=python
 
 " Coc-Prittier settings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -286,7 +305,7 @@ nnoremap <Right> :vertical resize -2<CR>
 map <F1> :colorscheme gruvbox<CR>
 map <F2> :colorscheme nord<CR>
 map <F3> :colorscheme onedark<CR>
-map <F4> :colorscheme <seoul256<CR>
+map <F4> :colorscheme seoul256<CR>
 
 
 
@@ -299,7 +318,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+let g:syntastic_python_checkers = ['flake8', 'pylint']
 
 
 " *---- Goyo and Limelight stuff ----*
