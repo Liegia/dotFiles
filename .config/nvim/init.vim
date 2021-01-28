@@ -1,7 +1,7 @@
 set encoding=UTF-8
 set number
 set spelllang=en_us
-#set spell
+" set spell
 let mapleader = "," " map leader to , (comma)
 
 " Install vim-plug first with:
@@ -264,7 +264,7 @@ set wildmode=longest:full,full
 " *----Key Bindings----*
 imap jj <Esc>
 imap jk <Esc>
-imap C-a <Esc>
+nnoremap <C-A> <Esc>
 
 nnoremap <leader><ENTER> :Goyo<CR>
 
@@ -272,6 +272,15 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+
+set splitbelow
+set splitright
+
+nnoremap <Up> :resize +2<CR> 
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
 
 map <F1> :colorscheme gruvbox<CR>
 map <F2> :colorscheme nord<CR>
