@@ -1,0 +1,25 @@
+rofi.fullscreen: false
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.padding: 10
+rofi.eh: 2
+rofi.bw: 0
+rofi.lines: 5
+! rofi.line-margin: 5
+rofi.line-padding: 5
+!rofi.location: 4
+rofi.font: Ubuntu mono 12
+rofi.show-icons: true
+! rofi.levenshtein-sort: true
+! rofi.sidebar-mode: true
+! rofi.auto-select: true
+rofi.columns: 1
+
+! Window		'background'	'border'	'separator'
+rofi.color-window:	#3b425210,	#00000000,	#cdcdcd
+
+! State			'bg',		'fg',		'altbg',	'hlbg',		'hlfg'
+rofi.color-normal:	#00000000,	#a4a4a4,	#00000000,	#00000000,	#A56B5B
+rofi.color-active:	#00000000,	#ffdfd6,	#00000000,	#00000000,	#ffdfd6
+rofi.color-urgent:	#00000000,	#ffdfd6,	#00000000,	#00000000,	#ffdfd6
+rofi.theme: /usr/share/rofi/themes/test.rasi

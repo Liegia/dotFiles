@@ -1,0 +1,3 @@
+[submodule ".local/share/nvim/plugged/gruvbox-materia"]
+	path = .local/share/nvim/plugged/gruvbox-materia
+	url = https://github.com/sainnhe/gruvbox-material.git
