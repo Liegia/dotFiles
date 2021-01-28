@@ -1,7 +1,7 @@
 set encoding=UTF-8
 set number
 set spelllang=en_us
-set spell
+#set spell
 let mapleader = "," " map leader to , (comma)
 
 " Install vim-plug first with:
@@ -13,7 +13,8 @@ call plug#begin(stdpath('data') . '/plugged')
 		Plug 'http://www.github.com/junegunn/vim-github-dashboard.git'
 		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 		Plug 'junegunn/fzf.vim'
-		Plug 'junegunn/seoul256.vim'
+		Plug 'junegunn/limelight.vim'
+		Plug 'junegunn/goyo.vim'
 		Plug 'preservim/nerdtree'
 		Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
 		Plug 'ryanoasis/vim-devicons'
@@ -21,19 +22,28 @@ call plug#begin(stdpath('data') . '/plugged')
 		Plug 'liuchengxu/vista.vim'
 		Plug 'jeetsukumaran/vim-pythonsense'
 		Plug 'jiangmiao/auto-pairs'
-		Plug 'joshdick/onedark.vim'
-		Plug 'itchyny/lightline.vim'
+		" Plug 'itchyny/lightline.vim' "Like airline but less dependencies
 		Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 		Plug 'Vimjas/vim-python-pep8-indent'
 		Plug 'dense-analysis/ale'
 		Plug 'neoclide/coc.nvim', {'branch': 'release'}
                 Plug 'tmux-plugins/vim-tmux'
+		Plug 'vim-syntastic/syntastic'
+		Plug 'tpope/vim-markdown'
+		" *---- Color-schemes ----*
+		Plug 'morhetz/gruvbox' 
                 Plug 'vim-airline/vim-airline'
 		Plug 'vim-airline/vim-airline-themes'
 		Plug 'arcticicestudio/nord-vim', { 'branch': 'develop'  }
-		Plug 'vim-syntastic/syntastic'
+		Plug 'junegunn/seoul256.vim'
+		Plug 'joshdick/onedark.vim'
+    		Plug 'kristijanhusak/vim-hybrid-material'
+    		Plug 'NLKNguyen/papercolor-theme'
+	    	Plug 'ajh17/Spacegray.vim'
+    		Plug 'chriskempson/base16-vim'
 		Plug 'morhetz/gruvbox'
 		Plug 'sainnhe/gruvbox-material'
+
 
 " Initialize plugin system
 call plug#end()
@@ -216,7 +226,7 @@ set showcmd
 
 syntax on
 
-" Color Themes
+" *---- Color Themes ----*
 " set termguicolors " Enables nvim more than 256 colors
 
 " let g:onedark_italic=1
@@ -231,7 +241,7 @@ colorscheme gruvbox
 " Sett filetypes.
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 au BufNewFile,BufFilePre,BufRead *.py set filetype=Python
-au BufNewFile,BufFilePre,BufRead *.py set filetype=Python
+au BufNewFile,BufFilePre,BufRead *.PY set filetype=Python
 
 " Coc-Prittier settings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -251,7 +261,24 @@ let g:airline_theme='gruvbox'
 set wildmenu
 set wildmode=longest:full,full
 
+" *----Key Bindings----*
 imap jj <Esc>
+imap jk <Esc>
+imap C-a <Esc>
+
+nnoremap <leader><ENTER> :Goyo<CR>
+
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+
+map <F1> :colorscheme gruvbox<CR>
+map <F2> :colorscheme nord<CR>
+map <F3> :colorscheme onedark<CR>
+map <F4> :colorscheme <seoul256<CR>
+
+
 
 " Syntastic stuff
 set statusline+=%#warningmsg#
@@ -262,6 +289,35 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+
+" *---- Goyo and Limelight stuff ----*
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+"Goyo settings
+function! s:goyo_enter()
+    set noshowmode
+    set noshowcmd
+    set nocursorline
+    CocDisable
+    Limelight
+endfunction
+
+function! s:goyo_leave()
+    set showmode
+    set showcmd
+    set cursorline
+    CocEnable
+    Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave() 
+
 
 
 
