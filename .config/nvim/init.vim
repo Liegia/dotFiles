@@ -45,6 +45,7 @@ call plug#begin(stdpath('data') . '/plugged')
 		Plug 'sainnhe/gruvbox-material'
 
 
+
 " Initialize plugin system
 call plug#end()
 
