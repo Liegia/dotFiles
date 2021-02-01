@@ -145,7 +145,7 @@ type = custom/script
 interval = 1
 format-prefix = "  "
 format = <label>
-exec = python /home/heiden/.config/polybar/spotify_status.py -f '{song}: {artist}'
+exec = python3 /home/heiden/.config/polybar/spotify_status.py -f '{song}: {artist}'
 label = %output%
 label-active-font = 3
 
@@ -155,12 +155,12 @@ exec = busctl --user -j get-property io.ntfd /weather openweathermap.strings Ren
 interval = 60
 label-font = 3
 
-[module/update]
-type = custom/script
-exec = yay -Qu | wc -l
-interval = 1000
-label = %output%
-format-prefix = " "
+#[module/update]
+#type = custom/script
+#exec = yay -Qu | wc -l
+#interval = 1000
+#label = %output%
+#format-prefix = " "
 
 [settings]
 screenchange-reload = true
