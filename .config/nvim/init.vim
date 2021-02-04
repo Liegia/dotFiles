@@ -47,20 +47,22 @@ call plug#begin(stdpath('data') . '/plugged')
 		Plug 'Vimjas/vim-python-pep8-indent'
 		Plug 'dense-analysis/ale'
 		Plug 'neoclide/coc.nvim', {'branch': 'release'}
-                Plug 'tmux-plugins/vim-tmux'
+        Plug 'tmux-plugins/vim-tmux'
 		Plug 'vim-syntastic/syntastic'
+        Plug 'preservim/tagbar'
 		Plug 'tpope/vim-markdown'
+        Plug 'rust-lang/rust.vim'
 		" *---- Color-schemes ----*
 		Plug 'morhetz/gruvbox' 
-                Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline'
 		Plug 'vim-airline/vim-airline-themes'
 		Plug 'arcticicestudio/nord-vim', { 'branch': 'develop'  }
 		Plug 'junegunn/seoul256.vim'
 		Plug 'joshdick/onedark.vim'
-    		Plug 'kristijanhusak/vim-hybrid-material'
-    		Plug 'NLKNguyen/papercolor-theme'
-	    	Plug 'ajh17/Spacegray.vim'
-    		Plug 'chriskempson/base16-vim'
+    	Plug 'kristijanhusak/vim-hybrid-material'
+    	Plug 'NLKNguyen/papercolor-theme'
+	    Plug 'ajh17/Spacegray.vim'
+    	Plug 'chriskempson/base16-vim'
 		Plug 'morhetz/gruvbox'
 		Plug 'sainnhe/gruvbox-material'
 
@@ -307,7 +309,7 @@ map <F2> :colorscheme nord<CR>
 map <F3> :colorscheme onedark<CR>
 map <F4> :colorscheme seoul256<CR>
 
-
+nmap <F8> :TagbarToggle<CR>
 
 " Syntastic stuff
 set statusline+=%#warningmsg#
@@ -319,6 +321,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8', 'pylint']
+let g:syntastic_always_populate_loc_list = 1
+
+
 
 
 " *---- Goyo and Limelight stuff ----*
@@ -347,6 +352,8 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave() 
 
+" *---- On save stuff ----*
+let g:rustfmt_autosave = 1
 
 
 
