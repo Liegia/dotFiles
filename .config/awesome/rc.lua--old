@@ -49,7 +49,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("nvim") or "vim"
+editor = os.getenv("nvim") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -66,13 +66,13 @@ awful.layout.layouts = {
    --  awful.layout.suit.tile.left,
    --  awful.layout.suit.tile.bottom,
    --  awful.layout.suit.tile.top,
-   --  awful.layout.suit.fair,
+     awful.layout.suit.fair,
    --  awful.layout.suit.fair.horizontal,
    --  awful.layout.suit.spiral,
    --  awful.layout.suit.spiral.dwindle,
    --  awful.layout.suit.max,
    --  awful.layout.suit.max.fullscreen,
-   --  awful.layout.suit.magnifier,
+     awful.layout.suit.magnifier,
    --  awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
@@ -164,59 +164,59 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
-awful.screen.connect_for_each_screen(function(s)
-    -- Wallpaper
-    set_wallpaper(s)
-
-    -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-
-    -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
-    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(gears.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
-                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
-    -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist {
-        screen  = s,
-        filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
-    }
-
-    -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
-    }
-
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
-
-    -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
-end)
+-- awful.screen.connect_for_each_screen(function(s)
+--    -- Wallpaper
+--    set_wallpaper(s)
+--
+--    -- Each screen has its own tag table.
+--    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+--
+--    -- Create a promptbox for each screen
+--    s.mypromptbox = awful.widget.prompt()
+--    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
+--    -- We need one layoutbox per screen.
+--    s.mylayoutbox = awful.widget.layoutbox(s)
+--    s.mylayoutbox:buttons(gears.table.join(
+--                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
+--                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
+--                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
+--                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
+--    -- Create a taglist widget
+--    s.mytaglist = awful.widget.taglist {
+--        screen  = s,
+--        filter  = awful.widget.taglist.filter.all,
+--        buttons = taglist_buttons
+--    }
+--
+--    -- Create a tasklist widget
+--    s.mytasklist = awful.widget.tasklist {
+--        screen  = s,
+--        filter  = awful.widget.tasklist.filter.currenttags,
+--        buttons = tasklist_buttons
+--    }
+--
+--    -- Create the wibox
+--    s.mywibox = awful.wibar({ position = "top", screen = s })
+--
+--    -- Add widgets to the wibox
+--    s.mywibox:setup {
+--        layout = wibox.layout.align.horizontal,
+--        { -- Left widgets
+--            layout = wibox.layout.fixed.horizontal,
+--            mylauncher,
+--            s.mytaglist,
+--            s.mypromptbox,
+--        },
+--        s.mytasklist, -- Middle widget
+--        { -- Right widgets
+--            layout = wibox.layout.fixed.horizontal,
+--            mykeyboardlayout,
+--            wibox.widget.systray(),
+--            mytextclock,
+--            s.mylayoutbox,
+--        },
+--    }
+--end)
 -- }}}
 
 -- {{{ Mouse bindings
@@ -310,15 +310,15 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- Demnu
+    -- Rofi
     awful.key({ modkey },            "space",     function () 
-    awful.util.spawn("dmenu_run") end,
-              {description = "Launch Dmenu", group = "makc"}),
+    awful.util.spawn("rofi -show run") end,
+              {description = "Launch rofi", group = "heiden"}),
 
     -- Firefox
     awful.key({ modkey }, "b", function ()
     awful.util.spawn("firefox") end,
-            {description = "Launch Firefox", group = "makc"}),
+            {description = "Launch Firefox", group = "heiden"}),
 
 
     awful.key({ modkey }, "x",
@@ -344,9 +344,9 @@ clientkeys = gears.table.join(
         end,
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey,   }, "q",      function (c) c:kill()                         end,
-              {description = "close window", group = "makc"}),
+              {description = "close window", group = "heiden"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
-              {description = "toggle floating", group = "makc"}),
+              {description = "toggle floating", group = "heiden"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
@@ -533,9 +533,12 @@ beautiful.useless_gap = 5
 -- Autostart
 --awful.spawn.with_shell("picom -CG --experimental-backends")
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("dropbox")
+--awful.spawn.with_shell("dropbox")
 --awful.spawn.with_shell("ntfd")
 --awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("feh --bg-fill --randomize ~/Images/Wallpappers")
-awful.spawn.with_shell("xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x180 --rotate normal --output HDMI-0 --off --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --primary --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-5 --off")
+awful.spawn.with_shell("feh --bg-fill --randomize ~/Pictures/wallpapers-ii/wallpapers")
+--awful.spawn.with_shell("wall -R")
+--awful.spawn.with_shell("/etc/init.d/startup")
+--awful.spawn.with_shell("~/Git/dotFiles/.config/polybar/launch.sh")
 -- }}}
+
