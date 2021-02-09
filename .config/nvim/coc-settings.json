@@ -12,15 +12,19 @@
     "typescript"
   ],
 
-  "python.linting.enable": true,
-  "python.linting.pylintEnable": true,
+  // Python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
 
-// explorer
-"eplorer.width": 30,
-"explorer.icon.enableNerdfont": true,
-"explorer.previewAction.onHover": false,
-"explorer.keyMappings": {
-  "<cr>": ["expandable?", "expand", "open"],
-  "v": "open:vsplit"
+  // CSS Congif
+
+  // explorer
+  "eplorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
   }
 }
