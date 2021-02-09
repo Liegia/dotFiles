@@ -1,0 +1,332 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/heiden/
+	..
+1610829858
+'b
+	/home/heiden/bin/
+	..
+1610829858
+'h
+	/home/heiden/
+	..
+1610829858
+'z
+	/home/heiden/.config/vifm
+	..
+1610829858
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/heiden
+	..
+0
+d/home
+	heiden
+1
+d/home/heiden
+	Manuals
+3
+d/home/heiden/Manuals
+	edit-remote-files-wim.md
+1
+d/home/heiden
+	Manuals
+3
+d/home
+	heiden
+1
+d/home/heiden
+	Manuals
+3
+d/home
+	heiden
+1
+d/home/heiden
+	manuals Manuals
+4
+d/home/heiden/manuals Manuals
+	..
+0
+d/home/heiden
+	github
+4
+d/home
+	heiden
+1
+d/
+	etc
+4
+d/etc
+	..
+0
+d/
+	etc
+4
+d/etc
+	..
+0
+d/
+	home
+5
+d/home
+	heiden
+1
+d/home/heiden
+	Configs
+1
+d/home/heiden/Configs
+	..
+0
+d/home/heiden
+	..
+0
+d/home
+	..
+0
+d/
+	home
+5
+d/home
+	heiden
+1
+d/home/heiden
+	..
+0
+d/home
+	heiden
+1
+d/home/heiden
+	Configs
+1
+d/home/heiden/Configs
+	..
+0
+d/home/heiden
+	.config
+2
+d/home/heiden/.config
+	vifm
+4
+d/home/heiden/.config/vifm
+	..
+0
+d/home/heiden/.config
+	vifm
+4
+d/home/heiden/.config/vifm
+	..
+0
+d/home/heiden/.config
+	..
+0
+d/home/heiden
+	.config
+2
+d/home/heiden/.config
+	..
+0
+d/home/heiden
+	.config
+2
+d/home
+	heiden
+1
+d/home/heiden
+	.config
+2
+d/home/heiden/.config
+	nvim
+3
+d/home/heiden/.config/nvim
+	notebook.py
+5
+d/home/heiden/.config
+	nvim
+3
+d/home/heiden/.config/nvim
+	coc-settings.json
+3
+d/home/heiden/.config
+	vifm
+4
+d/home/heiden/.config/vifm
+	..
+0
+d/home/heiden/.config
+	nvim
+3
+d/home/heiden/.config/nvim
+	..
+0
+d/home/heiden/.config
+	..
+0
+d/home/heiden
+	..
+0
+d/home
+	heiden
+1
+d/home/heiden
+	projects
+16
+d/home/heiden/projects
+	x64-assembly
+5
+d/home/heiden/projects/x64-assembly
+	ch1
+1
+d/home/heiden/projects/x64-assembly/ch1
+	..
+0
+d/home/heiden/projects/x64-assembly
+	..
+0
+d/home/heiden/projects
+	..
+0
+d/home/heiden
+	Downloads
+13
+d/home/heiden/Downloads
+	..
+0
+d/home/heiden
+	.profile
+24
+d/home
+	heiden
+1
+d/
+	home
+5
+d/home
+	heiden
+1
+d/home/heiden
+	.fzf
+3
+d/home/heiden/.fzf
+	shell
+7
+d/home/heiden/.fzf/shell
+	key-bindings.zsh
+6
+d/home/heiden/.fzf
+	shell
+7
+d/home/heiden/.fzf/shell
+	key-bindings.zsh
+5
+d/home/heiden/.fzf
+	shell
+7
+d/home/heiden
+	.fzf
+3
+d/home
+	heiden
+1
+d/home/heiden
+	Configs
+12
+d/home/heiden/Configs
+	xps-wls-zshrc
+5
+d/home/heiden
+	Configs
+12
+d/home
+	heiden
+1
+d/home/heiden
+	.fzf
+3
+d/home/heiden/.fzf
+	shell
+7
+d/home/heiden/.fzf/shell
+	fzf-cheat-sheet.ms
+3
+d/home/heiden/.fzf
+	shell
+7
+d/home/heiden
+	Configs
+12
+d/home/heiden/Configs
+	..
+0
+d/home/heiden
+	Downloads
+13
+d/home/heiden/Downloads
+	luarocks-3.5.0
+2
+d/home/heiden/Downloads/luarocks-3.5.0
+	README.md
+12
+d/home/heiden/Downloads
+	luarocks-3.5.0
+2
+d/home/heiden
+	Manuals
+14
+d
+
+# Right window history (oldest to newest):
+D/home/heiden
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:help
+:colors
+:show
+:filter
+:move
+:paste
+:q
+
+# Search history (oldest to newest):
+/neofetch
+/.zshrc
+
+# Prompt history (oldest to newest):
+pmanuals Manuals
+pManuals
+pfzf-cheat-sheet.md
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/heiden/.fzf/shell/fzf-cheat-sheet.ms
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].1
+]F
+s0
