@@ -261,9 +261,9 @@ colorscheme gruvbox
 " colorscheme gruvbo-material
 
 " Sett filetypes.
-au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-au BufNewFile,BufFilePre,BufRead *.py set filetype=Python
-au BufNewFile,BufFilePre,BufRead *.pY set filetype=python
+"au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+"au BufNewFile,BufFilePre,BufRead *.py set filetype=Python
+"au BufNewFile,BufFilePre,BufRead *.pY set filetype=python
 
 " Coc-Prittier settings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
