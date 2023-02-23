@@ -1,7 +1,7 @@
 set encoding=UTF-8
 set number
 set spelllang=en_us
-set spell
+" set spell
 let mapleader = "," " map leader to , (comma)
 
 " True Color Support if it's avaiable in terminal
@@ -249,19 +249,16 @@ set showcmd
 
 
 " *---- Color Themes ----*
-set termguicolors " Enables nvim more than 256 colors
+" set termguicolors " Enables nvim more than 256 colors
 
 " let g:onedark_italic=1
 " colorscheme onedark
-let g:nord_italic=1
-colorscheme nord
-"let g:gruvbox_italic=1 " Lookgs good with Fantasque Sans Mono or Fira Mono font.
-"let g:gruvbox_transparent_bg=1
-"colorscheme gruvbox
+" let g:nord_italic=1
+" colorscheme nord
+let g:gruvbox_italic=1 " Lookgs good with Fantasque Sans Mono or Fira Mono font.
+let g:gruvbox_transparent_bg=1
+colorscheme gruvbox
 " colorscheme gruvbo-material
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
-hi NonText guibg=NONE ctermbg=NONE
 
 " Sett filetypes.
 "au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
@@ -276,8 +273,8 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " Airline stuff
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='nord_minimal'
-"let g:airline_theme='gruvbox'
+"let g:airline_theme='nord_minimal'
+let g:airline_theme='gruvbox'
 
 " Syntax stuff
 	let g:asmsyntax = 'nasm'
@@ -307,11 +304,11 @@ nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
 
-map <F1> :colorscheme gruvbox<CR> :hi Normal guibg=NONE ctermbg=NONE <CR>
-map <F2> :colorscheme nord<CR> :hi Normal guibg=NONE ctermbg=NONE <CR>
-map <F3> :colorscheme onedark<CR> :hi Normal guibg=NONE ctermbg=NONE <CR>
-map <F4> :colorscheme seoul256<CR> :hi Normal guibg=NONE ctermbg=NONE <CR>
-map <F5> :colorscheme PaperColor<CR> :set background=light <CR> :hi Normal guibg=NONE ctermbg=NONE <CR>
+map <F1> :colorscheme gruvbox<CR>
+map <F2> :colorscheme nord<CR>
+map <F3> :colorscheme onedark<CR>
+map <F4> :colorscheme seoul256<CR>
+map <F5> :colorscheme PaperColor<CR> :set background=light <CR>
 "map <F6> :colorscheme base16-default-dark<CR>
 
 nmap <F8> :TagbarToggle<CR>
@@ -359,4 +356,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " *---- On save stuff ----*
 let g:rustfmt_autosave = 1
+
+
 

@@ -45,7 +45,9 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "nordtheme.lua")
+
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -64,9 +66,9 @@ awful.layout.layouts = {
     -- awful.layout.suit.floating,
     awful.layout.suit.tile,
    --  awful.layout.suit.tile.left,
-   --  awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.bottom,
    --  awful.layout.suit.tile.top,
-   --  awful.layout.suit.fair,
+    awful.layout.suit.fair,
    --  awful.layout.suit.fair.horizontal,
    --  awful.layout.suit.spiral,
    --  awful.layout.suit.spiral.dwindle,
@@ -108,6 +110,13 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+-- Create CPU Widget
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+-- Disk space widget
+local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
+-- Logout Menu
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -169,7 +178,12 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    if s.geometry.width >= s.geometry.height then
+        awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }, s, awful.layout.layouts[1])
+    else
+        awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }, s, awful.layout.layouts[2])
+    end
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -196,7 +210,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", height = 20, opacity = 0.8, bg = transparent, screen = s })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -211,7 +225,10 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+            cpu_widget(),
             wibox.widget.systray(),
+            fs_widget(),
+            logout_menu_widget(),
             mytextclock,
             s.mylayoutbox,
         },
@@ -311,7 +328,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Demnu
-    awful.key({ modkey },            "space",     function () 
+    awful.key({ modkey },            "space",     function ()
     awful.util.spawn("dmenu_run") end,
               {description = "Launch Dmenu", group = "makc"}),
 
@@ -533,9 +550,10 @@ beautiful.useless_gap = 5
 -- Autostart
 --awful.spawn.with_shell("picom -CG --experimental-backends")
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("dropbox")
---awful.spawn.with_shell("ntfd")
+--awful.spawn.with_shell("dropbox")
+awful.spawn.with_shell("flameshot")
 --awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("feh --bg-fill --randomize ~/Images/Wallpappers")
-awful.spawn.with_shell("xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x180 --rotate normal --output HDMI-0 --off --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --primary --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-5 --off")
+--awful.spawn.with_shell("feh --bg-fill --randomize ~/Images/Wallpappers")
+awful.spawn.with_shell("xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x180 --rotate left --output HDMI-0 --off --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --primary --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-5 --off")
+awful.spawn.with_shell("feh --bg-fill --randomize ~/Images/nord-wallpapers/")
 -- }}}
