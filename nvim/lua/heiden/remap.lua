@@ -8,7 +8,6 @@ vim.keymap.set("v", "jk", "<Esc>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gb") -- in v mode allows to shift the line up
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gb")
 
-
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- C-d down half a page but the cursor stays 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
