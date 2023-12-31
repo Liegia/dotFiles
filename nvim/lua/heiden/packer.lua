@@ -26,6 +26,8 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- "translated plug install"
   use('nvim-treesitter/playground')
   use('ThePrimeagen/harpoon')
+  use('junegunn/goyo.vim')
+  use('ludovicchabant/vim-gutentags')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use {
