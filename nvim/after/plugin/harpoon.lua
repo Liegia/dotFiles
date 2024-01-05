@@ -9,4 +9,10 @@ vim.keymap.set("n", "<C-j>", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<C-k>", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<C-l>", function() ui.nav_file(4) end)
 
-
+settings = {
+    save_on_toggle = true,
+    sync_on_ui_close = true,
+    key = function()
+        return vim.loop.cwd()
+    end,
+}

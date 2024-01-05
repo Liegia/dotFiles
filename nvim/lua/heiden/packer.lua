@@ -25,8 +25,13 @@ return require('packer').startup(function(use)
   -- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- "translated plug install"
   use('nvim-treesitter/playground')
-  use('ThePrimeagen/harpoon')
-  use('junegunn/goyo.vim')
+  use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+  use {
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      requires = { {"nvim-lua/plenary.nvim"} }
+  }
+  use('folke/zen-mode.nvim')
   use('ludovicchabant/vim-gutentags')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
