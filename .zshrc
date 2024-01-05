@@ -121,4 +121,4 @@ FZF-EOF"
 
 # Created by `pipx` on 2023-12-31 16:56:21
 export PATH="$PATH:/home/heiden/.local/bin"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
