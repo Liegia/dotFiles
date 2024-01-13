@@ -1,1 +1,1 @@
-# My dot and config files 
+2024 macOS configs
