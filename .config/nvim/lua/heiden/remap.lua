@@ -19,6 +19,8 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
 -------- telescope --------
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
