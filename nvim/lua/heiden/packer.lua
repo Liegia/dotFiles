@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
       requires = { {"nvim-lua/plenary.nvim"} }
   }
   use('folke/zen-mode.nvim')
+  use('folke/twilight.nvim')
   use('ludovicchabant/vim-gutentags')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
@@ -48,7 +49,13 @@ return require('packer').startup(function(use)
 		  -- Autocompletion
 		  {'hrsh7th/nvim-cmp'},
 		  {'hrsh7th/cmp-nvim-lsp'},
+          {'hrsh7th/cmp-buffer'},
+          {'hrsh7th/cmp-path'},
 		  {'L3MON4D3/LuaSnip'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lua'},
+		  {'rafamadriz/friendly-snippets'},
+
 	  }
   }
 

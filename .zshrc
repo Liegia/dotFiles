@@ -57,6 +57,7 @@ alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code --disable-gpu' # gui code editor
 alias ubuntuKVM='qemu-system-x86_64 -enable-kvm -m 8G ubuntu'
+alias manjaroKVM='qemu-system-x86_64 -enable-kvm -m 8G ~/vm/manjaro-xfce'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -121,4 +122,4 @@ FZF-EOF"
 
 # Created by `pipx` on 2023-12-31 16:56:21
 export PATH="$PATH:/home/heiden/.local/bin"
-#source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
