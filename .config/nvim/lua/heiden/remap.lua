@@ -3,6 +3,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- in normal mode, leader p v, exe
 
 vim.keymap.set("i", "nm", "<Esc>")
 vim.keymap.set("v", "nm", "<Esc>")
+vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("v", "<C-c>", "<Esc>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- in v mode allows to shift the line up
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

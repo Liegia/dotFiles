@@ -77,7 +77,8 @@ return {
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-                ['<A-Space>'] = cmp.mapping.complete(), -- Alt space
+                ['<√-Space>'] = cmp.mapping.complete(), -- se option space. in insert mode. <c-v-<option-j> to see what it is.
+                ['<∆-Space>'] = cmp.mapping.complete(), -- us option space. in insert mode. <c-v-<option-j> to see what it is.
                 --['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 --['<C-f>'] = cmp.mapping.scroll_docs(4),
                 --['<C-e>'] = cmp.mapping.abort(),
