@@ -1,0 +1,15 @@
+import = ["~/.config/alacritty/rose-pine.toml"]
+
+[font]
+size = 16
+
+[font.normal]
+family = "UbuntuMono Nerd Font"
+
+[window]
+decorations = "none"
+opacity = 0.8
+
+[window.padding]
+x = 10
+y = 10
