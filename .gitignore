@@ -25,3 +25,4 @@ utils/java/*
 .config/Microsoft\VisualStudio Services/8.0/Cache/08f90efc-ccf7-a3c5-0963-672397c3314f/00000038-0000-8888-8000-000000000000/LocationServiceData.config
 .config/Microsoft\VisualStudio Services/8.0/Cache
 .config/Microsoft\VisualStudio Services/8.0/Cache/a5ca35eb-148e-4ccd-bbb3-d31576d75958/951917ac-a960-4999-8464-e3f0aa25b381/LocationServiceData.config
+.DS_Store

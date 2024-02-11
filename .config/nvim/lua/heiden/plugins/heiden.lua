@@ -7,24 +7,24 @@ return {
             find_files = { hidden = true }
         }
     },
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ":TSUpdate",
-        opts = {
-            highlight = { enable = true },
-            indent = { enable = true },
-            ensure_installed = {
-                "bash",
-                "c",
-                "lua",
-                "markdown",
-                "markdown_inline",
-                "python",
-                "vimdoc",
-            }
-
-        }
-    },
+--     {
+--         'nvim-treesitter/nvim-treesitter',
+--         build = ":TSUpdate",
+--         opts = {
+--             highlight = { enable = true },
+--             indent = { enable = true },
+--             ensure_installed = {
+--                 "bash",
+--                 "c",
+--                 "lua",
+--                 "markdown",
+--                 "markdown_inline",
+--                 "python",
+--                 "vimdoc",
+--             }
+-- 
+--         }
+--     },
     {
         "mbbill/undotree",
         "tpope/vim-fugitive"
