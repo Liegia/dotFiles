@@ -1,8 +1,8 @@
 --vim.g.mapleader = " " -- set leader key.
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- in normal mode, leader p v, execute :Ex. 
 
-vim.keymap.set("i", "nm", "<Esc>")
-vim.keymap.set("v", "nm", "<Esc>")
+-- vim.keymap.set("i", "nm", "<Esc>")
+-- vim.keymap.set("v", "nm", "<Esc>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("v", "<C-c>", "<Esc>")
 

@@ -24,6 +24,7 @@ return {
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
         "j-hui/fidget.nvim",
+        "simrat39/rust-tools.nvim",
     },
 
         config = function()
