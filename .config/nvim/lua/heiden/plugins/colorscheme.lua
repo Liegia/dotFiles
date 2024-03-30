@@ -77,7 +77,7 @@ return {
     {
         "catppuccin/nvim",
         lazy = true,
-        name = "cat",
+        name = "catppuccin",
         opts = {
             integrations = {
                 aerial = true,
