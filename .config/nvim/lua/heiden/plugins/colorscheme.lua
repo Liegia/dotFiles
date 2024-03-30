@@ -2,11 +2,11 @@ return {
 
     -- Rosé Pine
     {
-        "rose-pine/neovim", 
+        "rose-pine/neovim",
         lazy = true,
         name = 'rose-pine',
         opts = {
-            variant = main, -- main, moon, dawn.
+            variant = "main", -- main, moon, dawn.
             styles = {
                 bold = true,
                 italic = true,
@@ -50,7 +50,7 @@ return {
         "folke/tokyonight.nvim",
         lazy = true,
         name = "tokyonight",
-        opts = { 
+        opts = {
             style = "night", -- storm, moon, night, day
             transparent = true, -- Enable this to disable setting the background color
             terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
@@ -77,10 +77,11 @@ return {
     {
         "catppuccin/nvim",
         lazy = true,
-        name = "catppuccin",
+        name = "cat",
         opts = {
             integrations = {
                 aerial = true,
+                transparent = true, -- Enable this to disable setting the background color
                 alpha = true,
                 cmp = true,
                 dashboard = true,
