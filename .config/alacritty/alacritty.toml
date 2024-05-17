@@ -1,10 +1,21 @@
 import = ["~/.config/alacritty/rose-pine.toml"]
 
 [font]
-size = 16
+size = 12
 
 [font.normal]
-family = "UbuntuMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.glyph_offset]
+x = 0
+y = 0
 
 [window]
 decorations = "none"
