@@ -25,6 +25,11 @@ return {
         'saadparwaiz1/cmp_luasnip',
         "j-hui/fidget.nvim",
         "simrat39/rust-tools.nvim",
+        'jose-elias-alvarez/null-ls.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'williamboman/mason.nvim',
+        }
     },
 
         config = function()
@@ -89,7 +94,8 @@ return {
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-                ['<√-Space>'] = cmp.mapping.complete(), -- se option space. in insert mode. <c-v-<option-j> to see what it is.
+                ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+                ['<C-s>'] = cmp.mapping.complete(), -- se option space. in insert mode. <c-v-<option-j> to see what it is.
                 ['<∆-Space>'] = cmp.mapping.complete(), -- us option space. in insert mode. <c-v-<option-j> to see what it is.
                 --['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 --['<C-f>'] = cmp.mapping.scroll_docs(4),

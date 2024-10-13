@@ -31,4 +31,9 @@ vim.opt.updatetime = 50
 -- vim.opt.spelllang = 'en_gb, sv'
 -- vim.opt.spell = true
 
--- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
+
+vim.api.nvim_set_hl(0, "Cursor", { fg = "#000000", bg = "#FFFFFF" })
+vim.api.nvim_set_hl(0, "CursorIM", { fg = "#FFFFFF", bg = "#FF0000" })
+
+

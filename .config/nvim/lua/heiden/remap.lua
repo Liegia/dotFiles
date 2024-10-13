@@ -23,6 +23,9 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
+vim.keymap.set('n', '<leader>p', ':!prettier --write "%:p"<CR>', { noremap = true, silent = true })
+
+
 -------- telescope --------
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>")
@@ -62,4 +65,8 @@ vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
---------- Harpoon end --------
+--------- Harpoon end ---------
+
+-- Bind F2 for rename
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { noremap = true, silent = true })
+

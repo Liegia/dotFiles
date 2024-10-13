@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Add brew installed apps to path
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/Homebrew/bin/brew shellenv)"
 
 # Dirs
 PATH="$HOME/.go/bin:$PATH"
@@ -60,8 +60,8 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # Alias
-alias "la"="eza -la"
-alias "ls"="eza"
+alias "la"="eza -la --icons=always"
+alias "ls"="eza --icons=always"
 
 # History
 HISTSIZE=10000
