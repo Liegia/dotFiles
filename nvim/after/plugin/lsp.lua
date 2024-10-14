@@ -1,7 +1,7 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false}
+    local opts = {buffer = bufnr, remap = true}
     --  lsp_zero.default_keymaps({buffer = bufnr})
     --end)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -13,12 +13,12 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set("i", "<C-m>", function() vim.lsp.buf.signature_help() end, opts)
+--    vim.keymap.set("i", "<C-m>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'clangd', 'marksman', 'jedi_language_server', 'rust_analyzer'},
+  ensure_installed = {'clangd', 'marksman', 'jedi_language_server', 'rust_analyzer', 'eslint', 'tsserver'},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -48,4 +48,21 @@ cmp.setup({
   }),
 })
 
+local on_attach = function (_, bufnr)
+    vim.api.nvim_buf_create_user_command(bufnr, 'Format', function (_)
+        vim.lsp.buf.format({
+            bufnr = bufnr,
+            filter = function(client)
+                return client.name == "null-ls"
+            end
+        })
+        print("File formatted")
+    end, { desc = 'Format current buffer with SLP' })
+end
 
+local null_ls = require("null-ls")
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettier,
+  },
+})

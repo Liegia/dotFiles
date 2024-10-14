@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/heiden/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/heiden/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/heiden/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/heiden/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/heiden/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/home/heiden/.cache/nvim/packer_hererocks/2.1.1723675123/share/lua/5.1/?.lua;/home/heiden/.cache/nvim/packer_hererocks/2.1.1723675123/share/lua/5.1/?/init.lua;/home/heiden/.cache/nvim/packer_hererocks/2.1.1723675123/lib/luarocks/rocks-5.1/?.lua;/home/heiden/.cache/nvim/packer_hererocks/2.1.1723675123/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/heiden/.cache/nvim/packer_hererocks/2.1.1723675123/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/heiden/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/heiden/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/heiden/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -153,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/heiden/.local/share/nvim/site/pack/packer/start/playground",
     url = "https://github.com/nvim-treesitter/playground"
+  },
+  plenary = {
+    loaded = true,
+    path = "/home/heiden/.local/share/nvim/site/pack/packer/start/plenary",
+    url = "https://github.com/nvim-lua/plenary"
   },
   ["plenary.nvim"] = {
     loaded = true,

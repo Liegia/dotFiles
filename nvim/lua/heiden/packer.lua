@@ -14,8 +14,8 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({ 
-	  'rose-pine/neovim', 
+  use({
+	  'rose-pine/neovim',
 	  as = 'rose-pine',
 	  config = function()
 	  	vim.cmd('colorscheme rose-pine')
@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
   -- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- "translated plug install"
   use('nvim-treesitter/playground')
-  use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+  use('nvim-lua/plenary.nvim') -- don't forget to add this one if you don't have it yet!
   use {
       "ThePrimeagen/harpoon",
       branch = "harpoon2",
@@ -37,26 +37,29 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v3.x',
-	  requires = {
-		  -- Uncomment these if you want to manage LSP servers from neovim
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v3.x',
+      requires = {
+          -- Uncomment these if you want to manage LSP servers from neovim
+          {'williamboman/mason.nvim'},
+          {'williamboman/mason-lspconfig.nvim'},
 
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-nvim-lsp'},
+          -- LSP Support
+          {'neovim/nvim-lspconfig'},
+          -- Autocompletion
+          {'hrsh7th/nvim-cmp'},
+          {'hrsh7th/cmp-nvim-lsp'},
           {'hrsh7th/cmp-buffer'},
           {'hrsh7th/cmp-path'},
-		  {'L3MON4D3/LuaSnip'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lua'},
-		  {'rafamadriz/friendly-snippets'},
-
-	  }
+          {'L3MON4D3/LuaSnip'},
+          {'saadparwaiz1/cmp_luasnip'},
+          {'hrsh7th/cmp-nvim-lua'},
+          {'rafamadriz/friendly-snippets'},
+      },
+  }
+  use {
+      'jose-elias-alvarez/null-ls.nvim',
+      requires = 'nvim-lua/plenary'
   }
 
   end)

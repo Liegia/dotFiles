@@ -1,12 +1,12 @@
 vim.g.mapleader = " " --set space to leader
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- in normal mode ("n"), space + p + v, exc :Ex
 
-vim.keymap.set("i", "jk", "<Esc>")
-vim.keymap.set("v", "jk", "<Esc>")
+--vim.keymap.set("i", "jk", "<Esc>")
+--vim.keymap.set("v", "jk", "<Esc>")
 
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gb") -- in v mode allows to shift the line up
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gb")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- in v mode allows to shift the line up
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- C-d down half a page but the cursor stays 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -18,6 +18,7 @@ vim.keymap.set("n", "<leader>y", "\"+y") -- leader y now copies to system clipbo
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>y", "\"+y")
 
+vim.keymap.set('n', '<leader>p', ':!prettier --write %<CR>', { noremap = true, silent = false })
 
 --LSP Zero stuff
 local lsp_zero = require('lsp-zero')
@@ -29,3 +30,4 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 -- here you can setup the language servers 
+--
